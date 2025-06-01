@@ -5,10 +5,14 @@
 
 TEST(test_select, AddFunction)
 {
-    SortError error = SE_SUCCESS;
+    Sorter* sorter = new Sorter();
+    SortData<float, std::vector> data;
 
-    // add your test here
+    int dsize = 128 + rand() % 100;
+    for (unsigned i = 0; i < dsize; i++) data.add(float(rand() % 1024) / 4096);
+    auto error = sorter->sort<float, std::vector, STT_SELECT>(data);
 
+    ASSERT_TRUE(std::is_sorted(data.data().begin(), data.data().end()));
     ASSERT_EQ(error, SE_SUCCESS);
 }
 
