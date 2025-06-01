@@ -15,7 +15,7 @@ TEST(test_select, AddFunction)
     auto error_unsorted = sorter->sort<float, std::vector, STT_SELECT>(data);
     ASSERT_TRUE(std::is_sorted(data.data().begin(), data.data().end()));
     ASSERT_EQ(error1, SE_SUCCESS);
-    //sorted
+
     auto error_sorted = sorter->sort<float, std::vector, STT_SELECT>(data);
     ASSERT_TRUE(std::is_sorted(data.data().begin(), data.data().end()));
     ASSERT_EQ(error2, SE_SUCCESS);
