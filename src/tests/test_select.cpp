@@ -15,7 +15,7 @@ TEST(test_select, MeasureSortTime)
     std::chrono::duration<double, std::milli> duration_unsorted =
         end_unsorted - start_unsorted;
     std::cout << "Sorting time (unsorted): " << duration_unsorted.count()
-        << " ms" << std::endl;
+            << " ms" << std::endl;
     ASSERT_TRUE(std::is_sorted(data.data().begin(), data.data().end()));
     ASSERT_EQ(error_unsorted, SE_SUCCESS);
     auto start_sorted = std::chrono::high_resolution_clock::now();
@@ -24,7 +24,7 @@ TEST(test_select, MeasureSortTime)
     std::chrono::duration<double, std::milli> duration_sorted =
         end_sorted - start_sorted;
     std::cout << "Sorting time (already sorted): " << duration_sorted.count()
-        << " ms" << std::endl;
+            << " ms" << std::endl;
     ASSERT_TRUE(std::is_sorted(data.data().begin(), data.data().end()));
     ASSERT_EQ(error_sorted, SE_SUCCESS);
 }
